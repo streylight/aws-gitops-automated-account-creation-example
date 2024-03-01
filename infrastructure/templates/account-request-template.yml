@@ -1,0 +1,20 @@
+# AWS Account Creation Request
+team_information:
+  team_name: Team Name
+  app_name: Project Name
+
+account_details:
+  purpose: Purpose of the Account
+  desired_aws_regions: Desired AWS Region(s)
+  required_resources:
+    - Resource 1
+    - Resource 2
+
+additional_information: |
+  Any additional information or comments
+
+additional_tags:
+  - key: Key1
+    value: Value1
+  - key: Key2
+    value: Value2

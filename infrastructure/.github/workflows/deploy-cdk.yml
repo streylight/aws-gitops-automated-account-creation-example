@@ -1,0 +1,27 @@
+name: Deploy CDK
+
+on:
+  pull_request:
+    types: [closed]
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout code
+      - name: Checkout code
+        uses: actions/checkout
+
+      # Install Node.js and CDK dependencies
+      - name: Setup Node.js
+        uses: actions/setup-node
+        with:
+          node-version: '14'
+      - run: npm install -g aws-cdk
+
+      # Deploy CDK stacks
+      - name: Deploy CDK stacks
+        run: cdk deploy --all --require-approval never
